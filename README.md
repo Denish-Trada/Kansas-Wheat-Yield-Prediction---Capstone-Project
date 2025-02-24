@@ -29,6 +29,8 @@ This repository contains the end-to-end analysis and predictive modeling for for
 - **Policy Formulation:**  
   Data-driven insights can support policy decisions that enhance food security and promote climate adaptation strategies in agricultural planning.
 
+ - Link to Github: https://github.com/Denish-Trada/Kansas-Wheat-Yield-Prediction---Capstone-Project
+
 ---
 
 ## Dataset Description
