@@ -29,7 +29,6 @@ This repository contains the end-to-end analysis and predictive modeling for for
 - **Policy Formulation:**  
   Data-driven insights can support policy decisions that enhance food security and promote climate adaptation strategies in agricultural planning.
 
- - Link to Github: https://github.com/Denish-Trada/Kansas-Wheat-Yield-Prediction---Capstone-Project
 
 ---
 
@@ -72,6 +71,8 @@ The project uses the following key datasets:
   
 - **Documentation:**  
   This README file and inline notebook documentation provide a comprehensive overview of the project rationale, methodology, and findings.
+
+   - Link to Github: https://github.com/Denish-Trada/Kansas-Wheat-Yield-Prediction---Capstone-Project
   
 - **Conclusion & Next Steps**
 - This project not only delivers a robust analysis of wheat crop yield variability in Kansas but also provides a scalable framework for future enhancements. Planned next steps include refining predictive models with additional feature engineering and incorporating more granular climate data or remote sensing inputs to further improve forecast accuracy.
