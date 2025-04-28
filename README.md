@@ -1,7 +1,6 @@
 # Kansas Wheat Yield Prediction — Capstone Project
 #### Author: Denish Trada
-#### GitHub: [github.com/denishtrada](https://github.com/denishtrada)
-
+#### GitHub: https://github.com/Denish-Trada/Kansas-Wheat-Yield-Prediction---Capstone-Project
 ---
 
 ## 📄 Project Overview
