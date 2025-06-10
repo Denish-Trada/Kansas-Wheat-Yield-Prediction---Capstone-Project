@@ -1,78 +1,169 @@
-# Kansas-Wheat-Yield-Prediction---Capstone-Project
-## Project Overview
+# Kansas Wheat Yield Prediction – Data Science Capstone
 
-This repository contains the end-to-end analysis and predictive modeling for forecasting wheat crop yields in Kansas. The project was designed to address the challenge of yield variability by integrating county-level wheat yield data with climate data spanning 2010–2020. 
+**Author:** Denish Trada  
+**Project:** Predicting Kansas Wheat Yield Using Environmental and Climate Data  
+**Submission:** BrainStation Data Science Capstone, 2025
 
-### Problem Area
-- **Challenge:**  
-  Predicting wheat crop yields in Kansas is complex due to natural climate variability, resource allocation differences, and inherent data gaps. This variability directly affects the profitability and sustainability of farming operations.
-- **Affected Stakeholders:**  
-  - **Kansas Farmers:** Gain insights to optimize irrigation, fertilizer usage, and planting schedules.  
-  - **Agricultural Agencies & Policymakers:** Leverage predictions to design targeted interventions, support sustainable farming practices, and improve resource management.  
-  - **Local Agribusinesses:** Use forecasts for better logistical planning and to mitigate risk in supply chain operations.
-
-### Proposed Data Science Solution
-- **Data Integration:**  
-  Combine historical wheat yield/county data with multi-year climate records.
-- **Exploratory Analysis:**  
-  Utilize descriptive statistics, interactive visualizations (histograms, box plots, scatter plots, time-series graphs, and geospatial maps), and data sanity checks to uncover key patterns and outliers.
-- **Advanced Modeling:**  
-  Implement regression models, statistical hypothesis testing, and clustering to capture the relationships between climate variables and yield outcomes. Feature engineering techniques (e.g., creation of lag variables and interaction terms) are applied to enhance predictive performance.
-- **Outcome:**  
-  The analysis provides actionable insights that can lead to more accurate yield predictions, ultimately helping stakeholders optimize resource allocation and reduce economic risk.
-
-### Impact of the Solution
-- **Economic Efficiency:**  
-  Improved yield prediction accuracy can help reduce input costs, prevent resource misallocation, and stabilize farm incomes.
-- **Environmental Benefits:**  
-  Optimized resource use (e.g., water and fertilizer) minimizes waste, reducing emissions and promoting sustainable practices.
-- **Policy Formulation:**  
-  Data-driven insights can support policy decisions that enhance food security and promote climate adaptation strategies in agricultural planning.
-
+**GitHub:** https://github.com/Denish-Trada/Kansas-Wheat-Yield-Prediction---Capstone-Project
 
 ---
 
-## Dataset Description
+## 🌾 Project Summary
 
-The project uses the following key datasets:
-
-- **Wheat Yield/County Data:**  
-  Contains county-level wheat yield statistics in Kansas, including measurements in bushels per acre.
-  
-- **Climate Data (2010–2020):**  
-  Comprises climate variables such as average temperature, precipitation, and summer rainfall relevant to the growing season.
-
-### Data Dictionary
-
-| **Variable Name**         | **Description**                                                                          | **Data Type** | **Units/Notes**                                |
-|---------------------------|------------------------------------------------------------------------------------------|---------------|------------------------------------------------|
-| `county`                  | County name in Kansas                                                                    | String        | Primary geographic identifier                  |
-| `year`                    | Year of observation                                                                      | Integer       | 2010-2020                                      |
-| `wheat_yield`             | Wheat yield per county                                                                   | Float         | Measured in bushels per acre                   |
-| `avg_temp`                | Average temperature during the growing season                                            | Float         | Degrees Fahrenheit                             |
-| `precipitation`           | Total precipitation during the growing season                                            | Float         | Inches                                         |
-| `summer_rainfall`         | Rainfall during the peak growing months                                                  | Float         | Inches                                         |
-| `soil_quality`            | Qualitative measure of soil quality (if available)                                       | Categorical   | e.g., Poor, Fair, Good, Excellent              |
-| `additional_climate_var`  | Placeholder for any additional climate variable introduced during advanced analysis       | Varies        | Specify unit during analysis                   |
-| `lag_yield`               | Yield of the previous year (derived feature)                                             | Float         | Supports temporal dependency analysis          |
-
-*Note: The data dictionary has been refined post-initial data inspection to include derived features and granular data definitions for clarity and reproducibility.*
+Accurate prediction of wheat crop yields is crucial for farm profitability, food security, and supply chain planning in Kansas and beyond.  
+This project leverages 10 years of historical county-level wheat yield, weather, and soil data to build robust, interpretable machine learning models for yield forecasting.  
+The final solution is delivered both as a transparent Jupyter notebook workflow and a user-friendly web dashboard, enabling actionable insights and scenario planning for growers, cooperatives, and agribusiness leaders.
 
 ---
 
-## Repository Structure & Contents
+## 📈 Problem Statement
 
-- **Jupyter Notebooks:**  
-  Contains detailed exploratory data analysis (EDA), advanced analytical techniques, and predictive modeling steps.
-  
-- **Data Files:**  
-  - `wheat_yield_county_data.csv` – Wheat yield data by county.
-  - `climate_data_2010_2020.xlsx` – Historical climate data for the growing season.
-  
-- **Documentation:**  
-  This README file and inline notebook documentation provide a comprehensive overview of the project rationale, methodology, and findings.
+**How can we predict wheat yield (tons per hectare) for Kansas counties, using historical weather, soil, and farm management data?**  
+Key goals:
+- Enable data-driven decisions for Kansas wheat farmers, cooperatives, and advisors.
+- Identify the most impactful, actionable yield drivers.
+- Deliver a transparent model and digital product that is practical for real-world use.
 
-   - Link to Github: https://github.com/Denish-Trada/Kansas-Wheat-Yield-Prediction---Capstone-Project
-  
-- **Conclusion & Next Steps**
-- This project not only delivers a robust analysis of wheat crop yield variability in Kansas but also provides a scalable framework for future enhancements. Planned next steps include refining predictive models with additional feature engineering and incorporating more granular climate data or remote sensing inputs to further improve forecast accuracy.
+---
+
+## 🗃️ Dataset Overview
+
+**Source:**  
+10 years (2010–2020) of county-level data for Kansas, including:
+- Wheat yield records (tons per hectare)
+- Climate variables (rainfall, temperature, weather condition)
+- Soil type and region
+- Management practices (fertilizer and irrigation use)
+
+**Size:** 166,640 records, 10 columns
+
+---
+
+## 📑 Final Data Dictionary
+
+| Column                   | Description                                                        | Data Type   | Example Value      |
+|--------------------------|--------------------------------------------------------------------|-------------|--------------------|
+| Region                   | Geographic region within Kansas                                    | Categorical | "west"             |
+| Soil_Type                | Dominant soil type in the field                                   | Categorical | "clay"             |
+| Crop                     | Crop type (filtered to "wheat")                                   | Categorical | "wheat"            |
+| Rainfall_mm              | Total rainfall during growing season (mm)                         | Float       | 950.2              |
+| Temperature_Celsius      | Average temperature during growing season (°C)                    | Float       | 22.8               |
+| Fertilizer_Used          | Whether fertilizer was used (True/False)                          | Boolean     | True               |
+| Irrigation_Used          | Whether irrigation was used (True/False)                          | Boolean     | False              |
+| Weather_Condition        | Generalized weather descriptor                                    | Categorical | "cloudy"           |
+| Days_to_Harvest          | Number of days from planting to harvest                           | Integer     | 120                |
+| Yield_tons_per_hectare   | Observed wheat yield at harvest (target variable)                 | Float       | 7.23               |
+
+---
+
+## 🧠 Approach
+
+1. **Data Wrangling:**  
+   - Cleaned, validated, and merged all raw data sources.
+   - Built a consistent schema for machine learning and business use.
+
+2. **Exploratory Data Analysis (EDA):**  
+   - Applied formal hypothesis testing, visual analytics, and feature selection.
+   - Identified **rainfall** and **fertilizer use** as the dominant, actionable yield drivers.
+
+3. **Modeling:**  
+   - Developed and benchmarked multiple regression models: linear, ridge, lasso, random forest.
+   - Performed extensive cross-validation and hyperparameter tuning.
+   - Used SHAP explainability to visualize and interpret model decisions.
+
+4. **Scenario Analysis:**  
+   - Simulated “what if” scenarios to show how changes in rainfall or fertilizer use impact yield.
+
+5. **Productization:**  
+   - Developed a Streamlit web dashboard allowing end-users to input scenarios, see predictions, and get actionable recommendations and feature driver explanations.
+
+---
+
+## 🌟 Key Highlights
+
+- **Model Accuracy:**  
+  - Final model (Ridge Regression): **R² = 0.78**, **RMSE = 0.79 tons/ha**
+  - Delivers reliable yield forecasts with clear, business-focused interpretability.
+
+- **Top Insights:**  
+  - **Rainfall** is the single strongest predictor of yield.
+  - **Fertilizer use** consistently boosts yields by about 1.5 tons/ha.
+  - Other variables (region, soil type, weather condition, temperature) had minimal impact in this dataset.
+
+- **Business Value:**  
+  - Farmers and co-ops can focus on rainfall monitoring and optimal fertilizer use for the best ROI.
+  - Dashboard delivers instant, transparent yield forecasts and “what if” scenario planning.
+  - Project empowers evidence-based decision making, with explainability for stakeholder trust.
+
+---
+
+## 🧭 Project Navigation
+
+### **Files and Workflow**
+
+- **1. Data Wrangling.ipynb**  
+  Data import, cleaning, merging, and initial schema alignment.
+
+- **2. Data Preprocessing & EDA.ipynb**  
+  Data dictionary, preprocessing, EDA, formal hypothesis testing.
+
+- **3. Baseline Modeling.ipynb**  
+  Baseline regression models and metric evaluation.
+
+- **4. Advanced Modeling Interpretation - EDA & Hypothesis Testing.ipynb**  
+  Feature selection, refined EDA, cumulative statistical justification.
+
+- **5. [Final Modeling Notebook].ipynb**  
+  Advanced modeling (ridge/lasso/random forest), cross-validation, SHAP explainability, scenario analysis, business recommendations.
+
+- **app.py**  
+  Streamlit dashboard demo for scenario planning and business-facing recommendations.
+
+- **shap_summary.png**  
+  SHAP feature importance plot (used in the dashboard).
+
+- **README.md**  
+  (This file) – Project summary, instructions, results, and navigation.
+
+---
+
+### **How to Run the Project**
+
+1. **Review notebooks in order:**  
+   - Each notebook is modular and includes markdown explaining the thought process and reasoning behind every key step.
+2. **For the dashboard demo:**  
+   - Open your terminal.
+   - Navigate to this project folder.
+   - Run: `streamlit run app.py`
+   - Interact with the app to explore scenario planning, predictions, SHAP impacts, and recommendations.
+
+---
+
+## 📌 Results for Stakeholders
+
+- **For Farmers/Advisors:**  
+  Use the dashboard for yield forecasts and scenario planning based on current rainfall and fertilizer strategy.
+
+- **For Analysts/Researchers:**  
+  Transparent workflow for EDA, modeling, and validation; fully reproducible.
+
+- **For Business Leaders:**  
+  Clear summary of drivers, model performance, and next steps for digital agriculture innovation.
+
+---
+
+## 🔮 Next Steps & Future Opportunities
+
+- Integrate real-time weather APIs or higher-frequency climate data.
+- Expand modeling to other crops or geographies.
+- Add more business features (risk alerts, downloadable reports, integration with farm management systems).
+
+---
+
+## 🙏 Acknowledgments
+
+Thanks to BrainStation, all instructor - Arun Marria & Ayon Ghosh, Teaching assistants - Reema Sipra & Clement Chan and Kansas wheat growers whose insights and challenges inspired this project.
+
+---
+
+
